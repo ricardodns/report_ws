@@ -1,0 +1,53 @@
+'use strict'; var mongoose = require('mongoose'); var Schema = mongoose.Schema;
+
+
+var ReportSchema = new Schema({
+	id: {
+	    type: Number,
+	    required: true,
+	    unique: true
+        address: {
+            type: String
+        },
+        city: {
+            type: String
+        },
+        description: {
+            type: String
+        },
+        id: {
+            type: integer
+        },
+        latitude: {
+            type: String
+        },
+        longitude: {
+            type: String
+        },
+        neighborhood: {
+            type: String
+        },
+        number: {
+            type: integer
+        },
+        ownerId: {
+            type: integer
+        },
+        province: {
+            type: String
+        },
+        status: {
+	   type: [{
+              type: String,
+	      enum: ['pending', 'ongoing', 'completed']
+	}],
+	type: {
+	      type: String
+        }
+});
+
+module.exports = mongoose.model('Tasks', ReportSchema);
+
+
+
+
