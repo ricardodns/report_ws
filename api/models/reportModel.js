@@ -33,11 +33,12 @@ var ReportSchema = new Schema({
             type: String
         },
         status: {
-	   type: [{
-              type: String,
-	      enum: ['pending', 'ongoing', 'completed']
-	}],
-	type: {
+	        type: [{
+	            type: String,
+	            enum: ['pending', 'ongoing', 'completed']}
+            ]
+        },
+	    tipo: {
 	      type: String
         }
 });
