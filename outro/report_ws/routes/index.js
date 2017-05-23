@@ -1,9 +1,23 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express'),
+    app = express(),
+    port = process.env.PORT || 3000,
+    mongoose = require('mongoose'),
+    Report = require('./api/models/reportModel'),
+    bodyParser = require('body-parser');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/Reportdb');
 
-module.exports = router;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
+var routes = require('./api/routes/reportRoute');
+routes(app);
+
+
+app.listen(port);
+
+
+console.log('RESTful API server started on: ' + port);
