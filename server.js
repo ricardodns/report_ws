@@ -13,11 +13,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-var routes = require('./api/routes/reportRoutes');
+var routes = require('./api/routes/reportRoute');
 routes(app);
 
 
 app.listen(port);
 
-console.log('RESTful API server started on: ' + port);
 
+console.log('Report RESTful API server started on: ' + port);

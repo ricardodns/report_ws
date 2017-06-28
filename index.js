@@ -1,23 +1,9 @@
-var express = require('express'),
-    app = express(),
-    port = process.env.PORT || 3000,
-    mongoose = require('mongoose'),
-    Report = require('./api/models/reportModel'),
-    bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+var route = require('./api/routes/reportRoute');
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Reports');
+app.get('/', function(req, res) {
+  res.send('HEY!');
+})
+app.listen(3000, function(){console.log('Server running on port 3000')});
 
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-
-var routes = require('./api/routes/reportRoute');
-routes(app);
-
-
-app.listen(port);
-
-
-console.log('Report RESTful API server started on: ' + port);
