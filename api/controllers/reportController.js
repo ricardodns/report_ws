@@ -35,7 +35,7 @@ exports.read_a_report = function(req, res) {
 
 
 exports.update_a_report = function(req, report) {
-  Report.findOneAndUpdate(req.params.reportId, req.body, {new: true}, function(err, report) {
+  Report.findOneAndUpdate({_id: req.params.taskId}, req.body, { new: true }, function(err, report) {
     if (err)
       res.send(err);
     res.json(report);
