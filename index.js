@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-var route = require('./api/routes/reportRoute');
+var route = require('api/routes/reportRoute');
 
 app.get('/', function(req, res) {
   res.send('HEY!');
