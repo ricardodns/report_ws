@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost/server');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/test', function(req, res) { res.jsonp({data : 'hello'});})
+app.get('/test', function(req, res) { res.json({data : 'hello'});})
 
 var routes = require('./api/routes/reportRoute.js');
 routes(app);
