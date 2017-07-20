@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(app) {
-  var reports = require('../controllers/reportController');
+  var reports = require('../controllers/reportController.js');
 
 
   // report Routes
