@@ -5,12 +5,11 @@ var mongoose = require('mongoose'),
   Report = mongoose.model('Reports');
 
 exports.list_all_reports = function(req, res) {
-    res.json({hello: "world"});
-  // Report.find({}, function(err, report) {
-  //   if (err)
-  //     res.send(err);
-  //
-  // });
+  Report.find({}, function(err, report) {
+    if (err)
+      res.send(err);
+
+  });
 };
 
 
