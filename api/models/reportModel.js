@@ -38,7 +38,8 @@ var ReportSchema = new Schema({
 	        type: [{
 	            type: String,
 	            enum: ['pending', 'ongoing', 'completed']}
-            ]
+            ],
+            default: ['pending']
         },
 	    tipo: {
 	      type: String
