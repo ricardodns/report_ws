@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
 
 exports.list_all_reports = function(req, res) {
     // res.json({hello: "world"});
+    console.log("LOL");
   Report.find({}, function(err, report) {
     if (err)
       res.send(err);
