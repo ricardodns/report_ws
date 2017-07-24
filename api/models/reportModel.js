@@ -29,7 +29,7 @@ var ReportSchema = new Schema({
             type: Number
         },
         ownerId: {
-            type: Schema.Types.ObjectId, ref: 'User'
+            type: Number
         },
         province: {
             type: String
